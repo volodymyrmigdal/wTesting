@@ -1409,18 +1409,22 @@ function processWatchingEnd()
     if( !descriptor.process.connected )
     if( !_.process.isAlive( descriptor.process.pid ) )
     return delete suite._processWatcherMap[ pid ];
-
-    let err = _.errBrief( 'Test suite', _.strQuote( suite.name ), 'had zombie process with pid:', pid, '\n' );
-    // if( suite.takingIntoAccount )
-    // suite.consoleBar( 0 );
-    suite.exceptionReport({ err, unbarring : 1 });
-    let con = _.process.terminate
-    ({
-      pid : descriptor.process.pid,
-      withChildren : 1,
-      timeOut : 5000,
-    });
-    readies.push( con );
+    
+    _.process.execPathOf({ pid : descriptor.process.pid })
+    .thenGive( ( cmdLine ) => 
+    {
+      let err = _.errBrief( 'Test suite', _.strQuote( suite.name ), 'had zombie process with pid:', pid, '\ncmd line:\n', cmdLine );
+      // if( suite.takingIntoAccount )
+      // suite.consoleBar( 0 );
+      suite.exceptionReport({ err, unbarring : 1 });
+      let con = _.process.terminate
+      ({
+        pid : descriptor.process.pid,
+        withChildren : 1,
+        timeOut : 5000,
+      });
+      readies.push( con );
+    })
   })
 
   if( readies.length )
