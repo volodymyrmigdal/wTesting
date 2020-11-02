@@ -36,4 +36,4 @@ jobs :
       with :
         node-version : ${{ matrix.node-version }}
     - run : npm i
-    - run : node proto/wtools/atop/tester.test/Puppeteer.test.s r:processWatchingOnPuppeteerZombie
+    - run : npm test
