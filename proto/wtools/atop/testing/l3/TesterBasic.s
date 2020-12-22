@@ -938,6 +938,9 @@ function suitesIncludeAt( path )
 
   _.assert( arguments.length === 1, 'Expects single argument' );
   _.assert( _.strIs( path ), 'Expects string' );
+  
+  if( Config.interpreter === 'browser' )
+  return;
 
   logger.verbosityPush( tester.verbosity );
 
