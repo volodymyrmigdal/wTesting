@@ -469,6 +469,7 @@ let Self =
   silencing : 1,
   processWatching : 1,
   routineTimeOut : 30000,
+  enabled : 0,
 
   tests :
   {

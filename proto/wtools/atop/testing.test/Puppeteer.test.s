@@ -427,7 +427,7 @@ let Self =
 
   name : 'Tools.Tester.Puppeteer',
   silencing : 0,
-  enabled : 1,
+  enabled : 0,
 
   onSuiteBegin,
   onSuiteEnd,

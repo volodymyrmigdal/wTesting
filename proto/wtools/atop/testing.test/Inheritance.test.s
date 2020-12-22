@@ -161,7 +161,7 @@ var Proto =
 
   name : 'Tools.tester.Inheritance',
   silencing : 1,
-  enabled : 1,
+  enabled : 0,
 
   tests :
   {

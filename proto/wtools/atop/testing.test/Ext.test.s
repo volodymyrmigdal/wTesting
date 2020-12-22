@@ -5233,7 +5233,7 @@ let Self =
 
   name : 'Tools.Tester.Ext',
   silencing : 1,
-  enabled : 1,
+  enabled : 0,
 
   onSuiteBegin,
   onSuiteEnd,
