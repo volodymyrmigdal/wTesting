@@ -46,7 +46,7 @@ function samples( test )
     withDirs : 0,
     filter :
     {
-      maskTransientDirectory : { excludeAny : [ /asset/, /out/, /puppeteer/ ] }
+      maskTransientDirectory : { excludeAny : [ /asset/, /out/, /spectron/ ] }
     },
     mode : 'distinct',
     mandatory : 0,

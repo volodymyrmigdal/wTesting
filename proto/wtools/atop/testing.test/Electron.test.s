@@ -379,7 +379,7 @@ let Self =
 
   name : 'Tools.Tester.Electron',
   silencing : 0,
-  enabled : 1,
+  enabled : 0,
 
   onSuiteBegin,
   onSuiteEnd,
